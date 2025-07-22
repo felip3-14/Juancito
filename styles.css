@@ -505,6 +505,46 @@ section.active {
     }
 }
 
+.mobile-detected .music-title,
+.mobile-detected .trivia-title,
+.mobile-detected .puzzle-title {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.mobile-detected .albums-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.mobile-detected .trivia-option {
+    padding: 1rem;
+    font-size: 1rem;
+}
+
+.mobile-detected .puzzle-board {
+    grid-template-columns: repeat(3, 70px);
+    grid-template-rows: repeat(3, 70px);
+}
+
+.mobile-detected .puzzle-slot {
+    width: 70px;
+    height: 70px;
+}
+
+.mobile-detected .puzzle-piece {
+    width: 60px;
+    height: 60px;
+    background-size: 180px 180px;
+}
+
+.mobile-detected .puzzle-piece.placed {
+    width: 70px;
+    height: 70px;
+    background-size: 210px 210px;
+}
+
+
 /* Animaciones Matrix */
 @keyframes matrixReveal {
     0% {
