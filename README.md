@@ -1,6 +1,5 @@
 # Feliz Cumpleaños Juan!
 
-Un proyecto especial de cumpleaños creado con amor, lleno de animaciones elegantes, efectos tipo Matrix y un reproductor de música personalizado al frente de la experiencia.
 
 ## Características
 
