@@ -460,8 +460,13 @@ section.active {
         font-size: 2.5rem;
     }
 
+    .player-title {
+        font-size: 1.5rem;
+    }
+
     .trivia-title {
-        font-size: 1.6rem;
+        font-size: 1.4rem;
+        margin-bottom: 2rem;
     }
 
     .trivia-option {
@@ -474,7 +479,7 @@ section.active {
     }
     
     .music-title {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
         margin-bottom: 2rem;
     }
     
@@ -491,12 +496,13 @@ section.active {
     }
     
     .albums-grid {
-        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-        gap: 1rem;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
     }
     
     .album-cover img {
         height: 80px;
+        filter: blur(0);
     }
 }
 
