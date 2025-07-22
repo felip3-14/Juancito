@@ -104,7 +104,7 @@ section.active {
 }
 
 .greeting-text {
-    font-size: 4rem;
+    font-size: clamp(2.5rem, 1rem + 8vw, 4rem);
     font-weight: 700;
     margin-bottom: 3rem;
     font-family: 'JetBrains Mono', monospace;
@@ -167,7 +167,7 @@ section.active {
 }
 
 .counter-text p {
-    font-size: 1.5rem;
+    font-size: clamp(1.2rem, 1rem + 1vw, 1.5rem);
     margin-bottom: 3rem;
     opacity: 0.8;
 }
@@ -187,7 +187,7 @@ section.active {
     transform: translateY(30px);
     position: absolute;
     text-align: center;
-    max-width: 80%;
+    max-width: 90%;
     line-height: 1.2;
 }
 
@@ -231,7 +231,7 @@ section.active {
     align-items: center;
     justify-content: center;
     margin: 0 auto;
-    margin-top: 2rem;
+    margin-top: clamp(1rem, 0.5rem + 2vw, 2rem);
 }
 
 .continue-button:hover, .next-button:hover {
@@ -252,16 +252,16 @@ section.active {
     text-align: center;
     margin-bottom: 3rem;
     font-weight: 300;
-    max-width: 80%;
+    max-width: 90%;
 }
 
 .albums-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
     gap: 1rem;
     margin-bottom: 3rem;
     max-width: 1000px;
-    width: 100%;
+    width: 90%;
 }
 
 .album-cover {
@@ -276,7 +276,7 @@ section.active {
     width: 100%;
     aspect-ratio: 1 / 1;
     object-fit: cover;
-    filter: blur(8px);
+    filter: blur(0);
     transition: filter 0.3s ease;
 }
 
@@ -291,7 +291,7 @@ section.active {
 }
 
 .cover-text {
-    font-size: 1.8rem;
+    font-size: clamp(1.2rem, 1rem + 1vw, 1.8rem);
     margin-bottom: 2rem;
     color: #ffd700;
     font-style: italic;
@@ -410,7 +410,7 @@ section.active {
 }
 
 .age-joke {
-    font-size: 1.5rem;
+    font-size: clamp(1rem, 0.8rem + 1vw, 1.5rem);
     color: #ff6b6b;
     font-style: italic;
     margin-bottom: 3rem;
@@ -432,7 +432,7 @@ section.active {
 }
 
 .final-text {
-    font-size: 1.3rem;
+    font-size: clamp(1rem, 0.8rem + 1vw, 1.3rem);
     margin-bottom: 2rem;
 }
 
@@ -605,8 +605,8 @@ section.active {
     flex-direction: column;
     justify-content: center;
     margin: 2rem auto;
-    max-width: 400px;
-    padding: 2rem;
+    max-width: 90%;
+    padding: clamp(1rem, 0.5rem + 2vw, 2rem);
     position: relative;
     box-shadow:
         0 4px 6px rgba(0, 0, 0, 0.1),
@@ -855,7 +855,7 @@ section.active {
 }
 
 .puzzle-subtitle {
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 0.8rem + 1vw, 1.2rem);
     color: #00ff41;
     margin-bottom: 1.5rem;
     opacity: 0.8;
@@ -971,7 +971,7 @@ section.active {
 }
 
 .puzzle-message p {
-    font-size: 1.8rem;
+    font-size: clamp(1.2rem, 1rem + 1vw, 1.8rem);
     color: #ffd700;
     margin-bottom: 2rem;
     text-shadow: 0 0 15px #ffd700;
@@ -1068,7 +1068,7 @@ section.active {
     gap: 1.5rem;
     margin-bottom: 3rem;
     max-width: 600px;
-    width: 100%;
+    width: 90%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -1077,8 +1077,8 @@ section.active {
     background: rgba(255, 255, 255, 0.1);
     border: 2px solid rgba(255, 255, 255, 0.2);
     color: white;
-    padding: 1.5rem;
-    font-size: 1.2rem;
+    padding: clamp(1rem, 0.8rem + 1vw, 1.5rem);
+    font-size: clamp(1rem, 0.8rem + 1vw, 1.2rem);
     border-radius: 15px;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -1116,7 +1116,7 @@ section.active {
 }
 
 .trivia-message p {
-    font-size: 1.8rem;
+    font-size: clamp(1.2rem, 1rem + 1vw, 1.8rem);
     font-weight: 600;
     color: #ffd700;
     text-shadow: 0 0 15px #ffd700;
