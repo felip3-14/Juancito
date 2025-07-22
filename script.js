@@ -113,10 +113,15 @@ function initializePuzzle() {
             piece.style.backgroundRepeat = 'no-repeat';
             piece.style.border = '2px solid rgba(0, 255, 65, 0.3)';
             
-            // Event listeners para drag and drop
+            // Event listeners for drag and drop
             piece.addEventListener('dragstart', handleDragStart);
             piece.addEventListener('dragend', handleDragEnd);
             
+            // Touch event listeners
+            piece.addEventListener('touchstart', handleTouchStart, { passive: false });
+            piece.addEventListener('touchmove', handleTouchMove, { passive: false });
+            piece.addEventListener('touchend', handleTouchEnd);
+
             puzzlePiecesContainer.appendChild(piece);
         });
     };
@@ -176,6 +181,93 @@ function handleDragEnter(e) {
 function handleDragLeave(e) {
     e.target.classList.remove('highlight');
 }
+
+// --- Touch Event Handlers for Puzzle ---
+let draggedPiece = null;
+let startX, startY;
+let offsetX, offsetY;
+
+function handleTouchStart(e) {
+    e.preventDefault();
+    draggedPiece = e.target;
+    
+    // Para que la pieza "salte" y se vea que la arrastramos
+    draggedPiece.classList.add('dragging');
+    
+    // Guardar la posición inicial del toque
+    const touch = e.touches[0];
+    startX = touch.clientX;
+    startY = touch.clientY;
+    
+    // Posicionar la pieza debajo del dedo
+    const rect = draggedPiece.getBoundingClientRect();
+    offsetX = startX - rect.left;
+    offsetY = startY - rect.top;
+
+    draggedPiece.style.left = `${startX - offsetX}px`;
+    draggedPiece.style.top = `${startY - offsetY}px`;
+}
+
+function handleTouchMove(e) {
+    if (!draggedPiece) return;
+    e.preventDefault();
+    
+    const touch = e.touches[0];
+    const newX = touch.clientX;
+    const newY = touch.clientY;
+    
+    // Mover la pieza con el dedo
+    draggedPiece.style.left = `${newX - offsetX}px`;
+    draggedPiece.style.top = `${newY - offsetY}px`;
+
+    // Resaltar el slot debajo
+    const elementUnder = document.elementFromPoint(newX, newY);
+    document.querySelectorAll('.puzzle-slot').forEach(s => s.classList.remove('highlight'));
+    if (elementUnder && elementUnder.classList.contains('puzzle-slot') && !elementUnder.querySelector('.puzzle-piece')) {
+        elementUnder.classList.add('highlight');
+    }
+}
+
+function handleTouchEnd(e) {
+    if (!draggedPiece) return;
+    
+    // Quitar el estilo de arrastre
+    draggedPiece.classList.remove('dragging');
+    draggedPiece.style.left = '';
+    draggedPiece.style.top = '';
+
+    // Encontrar el elemento debajo de donde se soltó
+    const touch = e.changedTouches[0];
+    const elementUnder = document.elementFromPoint(touch.clientX, touch.clientY);
+    
+    document.querySelectorAll('.puzzle-slot').forEach(s => s.classList.remove('highlight'));
+    
+    // Si se suelta sobre un slot válido
+    if (elementUnder && elementUnder.classList.contains('puzzle-slot') && !elementUnder.querySelector('.puzzle-piece')) {
+        const targetSlot = elementUnder;
+        const sourceContainer = draggedPiece.parentElement;
+
+        targetSlot.appendChild(draggedPiece);
+        draggedPiece.classList.add('placed');
+
+        if (sourceContainer.classList.contains('puzzle-slot')) {
+            sourceContainer.classList.remove('filled');
+        }
+        
+        targetSlot.classList.add('filled');
+        checkPuzzleComplete();
+    } 
+    // Si se suelta fuera de un slot (devolver al contenedor de piezas)
+    else if (draggedPiece.parentElement.classList.contains('puzzle-slot')) {
+        const puzzlePiecesContainer = document.getElementById('puzzlePieces');
+        puzzlePiecesContainer.appendChild(draggedPiece);
+        draggedPiece.classList.remove('placed');
+        draggedPiece.parentElement.classList.remove('filled');
+    }
+
+    draggedPiece = null;
+}
+
 
 // Función corregida para manejar el drop
 function handleDrop(e) {
