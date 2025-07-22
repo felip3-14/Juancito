@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Cumpleaños Juan</title>
+    <link rel="stylesheet" href="styles.css?v=1.2">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Fondo animado -->
+        <div class="animated-background">
+            <div class="gradient-orb orb1"></div>
+            <div class="gradient-orb orb2"></div>
+            <div class="gradient-orb orb3"></div>
+        </div>
+
+        <!-- Pantalla inicial -->
+        <section class="intro-section active" id="introSection">
+            <div class="intro-content">
+                <h1 class="greeting-text">Hola <span class="name-changing" id="changingName">Juan</span></h1>
+                <button class="start-button hidden" id="startButton">empezar</button>
+            </div>
+        </section>
+
+        <!-- Nueva sección intermedia con reproductor -->
+        <section class="player-section" id="playerSection">
+            <div class="player-content">
+                <h2 class="player-title">pon play para disfrutar la experiencia</h2>
+                
+                <!-- Reproductor elegante -->
+                <div class="media-controls show" id="mediaControls">
+                    <div class="media-buttons">
+                        <button class="media-button volume-down-btn" title="Bajar volumen">
+                            <i class="fas fa-volume-down button-icons"></i>
+                            <span class="button-text">Vol-</span>
+                        </button>
+
+                        <button class="media-button play-button" title="Play/Pause" id="mainPlayButton">
+                            <i class="fas fa-play button-icons" id="playIcon"></i>
+                            <span class="button-text" id="playText">Play</span>
+                        </button>
+
+                        <button class="media-button volume-up-btn" title="Subir volumen">
+                            <i class="fas fa-volume-up button-icons"></i>
+                            <span class="button-text">Vol+</span>
+                        </button>
+                    </div>
+                    
+                    <div class="media-progress">
+                        <div class="progress-bar-wrapper">
+                            <div class="progress-bar" id="mainProgressBar"></div>
+                        </div>
+                        <div class="progress-time-current" id="currentTimeDisplay">0:00</div>
+                        <div class="progress-time-total" id="totalTimeDisplay">0:00</div>
+                    </div>
+                </div>
+
+                <button class="continue-button hidden" id="playerContinueButton">
+                    <span>→</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Sección del contador -->
+        <section class="counter-section" id="counterSection">
+            <div class="counter-content">
+                <div class="counter-text">
+                    <h2>Hace <span class="counter-number" id="dayCounter">165</span> días que te conozco</h2>
+                    <p>y desde ahí conocí:</p>
+                </div>
+                <div class="discoveries-container">
+                    <div class="discovery-item" data-text="música nueva">música nueva</div>
+                    <div class="discovery-item" data-text="películas nuevas">películas nuevas</div>
+                    <div class="discovery-item" data-text="ideas nuevas">ideas nuevas</div>
+                    <div class="discovery-item special" data-text="pero lo más importante, un salame con el que me gusta compartir y charlar, desde cosas chicas, hasta cosas grandes">pero lo más importante, un salame con el que me gusta compartir y charlar, desde cosas chicas, hasta cosas grandes</div>
+                </div>
+                <button class="continue-button hidden" id="continueButton">
+                    <span>→</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Sección de música -->
+        <section class="music-section" id="musicSection">
+            <div class="music-content">
+                <h2 class="music-title">ahora soy groupie de un artista, algo que jamás consideré posible</h2>
+                
+                <div class="albums-grid">
+                    <div class="album-cover" data-album="appetite">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Crect width='300' height='300' fill='%23e74c3c'/%3E%3Ctext x='150' y='150' font-family='Arial' font-size='16' fill='white' text-anchor='middle' dy='0.3em'%3EGuns N' Roses%3C/text%3E%3C/svg%3E" alt="Appetite for Destruction">
+                    </div>
+                    <div class="album-cover" data-album="1989">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Crect width='300' height='300' fill='%2387CEEB'/%3E%3Ctext x='150' y='150' font-family='Arial' font-size='16' fill='white' text-anchor='middle' dy='0.3em'%3E1989%3C/text%3E%3C/svg%3E" alt="1989 Taylor's Version">
+                    </div>
+                    <div class="album-cover" data-album="soda">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Crect width='300' height='300' fill='%23f39c12'/%3E%3Ctext x='150' y='150' font-family='Arial' font-size='16' fill='white' text-anchor='middle' dy='0.3em'%3ESoda Stereo%3C/text%3E%3C/svg%3E" alt="Soda Stereo">
+                    </div>
+                    <div class="album-cover" data-album="morning-glory">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Crect width='300' height='300' fill='%239b59b6'/%3E%3Ctext x='150' y='150' font-family='Arial' font-size='16' fill='white' text-anchor='middle' dy='0.3em'%3EMorning Glory%3C/text%3E%3C/svg%3E" alt="Morning Glory">
+                    </div>
+                    <div class="album-cover" data-album="definitely">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Crect width='300' height='300' fill='%2734495e'/%3E%3Ctext x='150' y='150' font-family='Arial' font-size='16' fill='white' text-anchor='middle' dy='0.3em'%3EDefinitely Maybe%3C/text%3E%3C/svg%3E" alt="Definitely Maybe">
+                    </div>
+                    <div class="album-cover" data-album="heart-shaped">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Crect width='300' height='300' fill='%2327ae60'/%3E%3Ctext x='150' y='150' font-family='Arial' font-size='16' fill='white' text-anchor='middle' dy='0.3em'%3EHeart Shaped World%3C/text%3E%3C/svg%3E" alt="Heart Shaped World">
+                    </div>
+                    <div class="album-cover" data-album="tranquility">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Crect width='300' height='300' fill='%23e67e22'/%3E%3Ctext x='150' y='150' font-family='Arial' font-size='16' fill='white' text-anchor='middle' dy='0.3em'%3ETranquility Base%3C/text%3E%3C/svg%3E" alt="Tranquility Base">
+                    </div>
+                    <div class="album-cover" data-album="strange-desire">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Crect width='300' height='300' fill='%2316a085'/%3E%3Ctext x='150' y='150' font-family='Arial' font-size='16' fill='white' text-anchor='middle' dy='0.3em'%3EStrange Desire%3C/text%3E%3C/svg%3E" alt="Strange Desire">
+                    </div>
+                </div>
+
+                <div class="cover-reveal">
+                    <p class="cover-text">y también conocí mi cover favorito, tanto que me gusta más que la versión original</p>
+                </div>
+
+                <button class="next-button hidden" id="nextButton">
+                    <span>→</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Sección de Trivia -->
+        <section class="trivia-section" id="triviaSection">
+            <div class="trivia-content">
+                <h2 class="trivia-title">Quiero que adivines, ¿cuál fue la primera canción con la que te introduje como músico?</h2>
+                <div class="trivia-options">
+                    <button class="trivia-option" data-correct="false">a. Shake It Off</button>
+                    <button class="trivia-option" data-correct="true">b. Live forever</button>
+                    <button class="trivia-option" data-correct="false">c. Tratame Suavemente</button>
+                </div>
+                <div class="trivia-message hidden" id="triviaMessage">
+                    <p id="triviaMessageText"></p>
+                </div>
+                 <button class="continue-button hidden" id="triviaContinueButton">
+                    <span>→</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Sección del juego de rompecabezas -->
+        <section class="puzzle-section" id="puzzleSection">
+            <div class="puzzle-content">
+                <h2 class="puzzle-title">pero antes de terminar, tenés que armar este rompecabezas</h2>
+                <p class="puzzle-subtitle">arrastrá las piezas para completar la imagen</p>
+                
+                <div class="puzzle-container">
+                    <div class="puzzle-board" id="puzzleBoard">
+                        <!-- Las piezas se generarán dinámicamente -->
+                    </div>
+                </div>
+                
+                <div class="puzzle-pieces" id="puzzlePieces">
+                    <!-- Las piezas mezcladas se generarán aquí -->
+                </div>
+                
+                <div class="puzzle-message hidden" id="puzzleMessage">
+                    <p>¡Perfecto! Así es como te ve un enano faquero</p>
+                    <button class="continue-button" id="puzzleContinueButton">
+                        <span>→</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección final -->
+        <section class="birthday-section" id="birthdaySection">
+            <div class="birthday-content">
+                <div class="birthday-message">
+                    <h1 class="birthday-title">Feliz cumple Juancito</h1>
+                    <p class="age-joke">24 años, en cualquier momento te traiciona la espalda o la cadera</p>
+                </div>
+                
+                <div class="final-button-container">
+                    <p class="final-text">comentarios, sugerencias y agradecimientos extra, dejar <a href="https://wa.me/3534214623?text=felipe_que_capo_que_sos" class="whatsapp-link" target="_blank">aquí</a></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Audio element (hidden) -->
+        <audio id="coverAudio" preload="auto">
+            <source src="assets/AUDIO-2025-02-21-16-11-55.mp3" type="audio/mpeg">
+            Tu navegador no soporta el elemento audio.
+        </audio>
+    </div>
+
+    <script src="script.js?v=1.2"></script>
+</body>
+</html> 
