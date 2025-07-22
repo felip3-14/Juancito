@@ -144,12 +144,23 @@ h2 {
 }
 
 /* Sección Música */
+.music-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
 .albums-grid {
     display: grid; grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
     gap: 1rem; margin-bottom: 2rem; width: 100%; max-width: 500px;
 }
 .album-cover img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 8px; filter: blur(0); }
-.cover-reveal { text-align: center; margin-top: 2rem; }
+.cover-reveal {
+    text-align: center;
+    margin-top: 2rem;
+}
 .cover-text { font-size: clamp(1.2rem, 1rem + 1vw, 1.8rem); margin-bottom: 2rem; color: #ffd700; font-style: italic; }
 
 /* Sección Trivia */
@@ -169,6 +180,13 @@ h2 {
 .trivia-message p { font-size: clamp(1.2rem, 1rem + 1vw, 1.8rem); font-weight: 600; color: #ffd700; text-shadow: 0 0 15px #ffd700; animation: fadeIn 0.5s ease; }
 
 /* Sección Puzzle */
+.puzzle-section {
+    justify-content: space-around;
+}
+.puzzle-title {
+    font-size: clamp(1.2rem, 1rem + 2vw, 2rem);
+    margin-bottom: 1rem;
+}
 .puzzle-subtitle { font-size: clamp(1rem, 0.8rem + 1vw, 1.2rem); color: #00ff41; margin-bottom: 1.5rem; opacity: 0.8; }
 .puzzle-container { display: flex; justify-content: center; margin-bottom: 1.5rem; }
 .puzzle-board { display: grid; grid-template-columns: repeat(3, minmax(60px, 1fr)); grid-template-rows: repeat(3, minmax(60px, 1fr)); gap: 2px; background: rgba(255, 255, 255, 0.1); padding: 5px; border-radius: 15px; width: 100%; max-width: 300px; aspect-ratio: 1/1; }
@@ -219,6 +237,7 @@ h2 {
     .puzzle-piece { width: 100px; height: 100px; background-size: 300px 300px; }
     .albums-grid { max-width: 1000px; }
     .continue-button, .next-button { width: 80px; height: 80px; }
+    .puzzle-title { font-size: clamp(1.5rem, 1rem + 2.5vw, 2.5rem); }
 }
 
 /* Utilidades y Animaciones */
