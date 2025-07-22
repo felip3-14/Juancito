@@ -459,13 +459,23 @@ section.active {
     .greeting-text {
         font-size: 2.5rem;
     }
+
+    .trivia-title {
+        font-size: 1.6rem;
+    }
+
+    .trivia-option {
+        padding: 1.2rem;
+        font-size: 1.1rem;
+    }
     
     .counter-text h2 {
         font-size: 2rem;
     }
     
     .music-title {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
     }
     
     .birthday-title {
@@ -481,12 +491,12 @@ section.active {
     }
     
     .albums-grid {
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
         gap: 1rem;
     }
     
     .album-cover img {
-        height: 100px;
+        height: 80px;
     }
 }
 
