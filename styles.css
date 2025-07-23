@@ -261,6 +261,20 @@ h2 {
 }
 
 /* Utilidades y Animaciones */
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.8s ease-out;
+}
+
+.puzzle-message.show {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
 .fade-in { opacity: 0; animation: fadeIn 1s ease-out forwards; }
 @keyframes fadeIn { to { opacity: 1; } }
 

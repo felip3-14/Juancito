@@ -361,18 +361,31 @@ function checkPuzzleComplete() {
 }
 
 function showPuzzleSuccess() {
-    const puzzleBoard = document.querySelector('.puzzle-board');
-    puzzleBoard.classList.add('puzzle-complete');
-    
-    // Mostrar mensaje de éxito
+    const puzzleContent = document.querySelector('.puzzle-content');
     const puzzleMessage = document.getElementById('puzzleMessage');
-    puzzleMessage.classList.remove('hidden');
-    puzzleMessage.classList.add('show');
-    
-    // Crear efecto de partículas de éxito
-    createSuccessParticles();
-    
-    console.log('¡Rompecabezas completado!');
+
+    // 1. Ocultar el tablero y las piezas con una transición
+    puzzleContent.classList.add('fade-out');
+
+    // 2. Después de la transición, mostrar el mensaje centrado
+    setTimeout(() => {
+        // Ocultar elementos que no queremos
+        document.querySelector('.puzzle-title').style.display = 'none';
+        document.querySelector('.puzzle-subtitle').style.display = 'none';
+        document.querySelector('.puzzle-container').style.display = 'none';
+        document.querySelector('.puzzle-pieces').style.display = 'none';
+        
+        // Mostrar el mensaje
+        puzzleMessage.classList.remove('hidden');
+        puzzleMessage.classList.add('show', 'fade-in');
+
+        // Asegurarse que el contenedor principal esté visible
+        puzzleContent.classList.remove('fade-out');
+        puzzleContent.style.opacity = '1';
+
+        createSuccessParticles();
+        console.log('¡Rompecabezas completado!');
+    }, 800); // Duración de la animación de fade-out
 }
 
 function createSuccessParticles() {
