@@ -6,6 +6,11 @@
 }
 
 body {
+    margin: 0;
+    padding: 0 16px; /* Padding lateral mínimo */
+  }
+  
+body {
     font-family: 'Inter', sans-serif;
     overflow: hidden;
     background: #0a0a0a;
@@ -13,13 +18,12 @@ body {
     min-height: 100vh;
 }
 
-.container {
-    width: 100%;
-    max-width: 1000px;
-    margin: 0 auto;
-    position: relative;
-    min-height: 100vh;
-}
+.contenedor {
+    width: 100%;          /* Cambiar esto */
+    max-width: 1000px;    /* Agregar esto */
+    margin: 0 auto;       /* Agregar esto */
+    /* ... mantener el resto ... */
+  }
 
 /* Fondo animado con gradientes */
 .animated-background {
