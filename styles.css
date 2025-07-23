@@ -9,7 +9,7 @@ body {
     margin: 0;
     padding: 0 16px; /* Padding lateral mínimo */
   }
-  
+
 body {
     font-family: 'Inter', sans-serif;
     overflow: hidden;
@@ -51,6 +51,23 @@ body {
     animation: float 8s ease-in-out infinite;
     opacity: 0.3;
 }
+.boton {
+    display: inline-block;
+    padding: 16px 32px; /* ¡Aumenté el padding! (antes era 12px 24px) */
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+  }
+  
+  /* Efecto hover solo para desktop (opcional) */
+  @media (hover: hover) {
+    .boton:hover {
+      background-color: #45a049;
+    }
+  }
 
 .orb1 { width: 300px; height: 300px; background: linear-gradient(45deg, #ff6b6b, #4ecdc4); top: 20%; left: 10%; animation-delay: 0s; }
 .orb2 { width: 200px; height: 200px; background: linear-gradient(45deg, #a8e6cf, #ffd3a5); top: 60%; right: 15%; animation-delay: 3s; }
@@ -279,3 +296,4 @@ img {
     max-width: 100%;
     height: auto;
   }
+  
