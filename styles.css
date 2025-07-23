@@ -14,9 +14,11 @@ body {
 }
 
 .container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
     position: relative;
     min-height: 100vh;
-    width: 100%;
 }
 
 /* Fondo animado con gradientes */
@@ -52,7 +54,7 @@ body {
 
 @keyframes float {
     0%, 100% { transform: translateY(0px) rotate(0deg); }
-    50% { transform: translateY(-30px) rotate(180deg); }
+    50% { transform: translateY(-30px) rotate(180deg); } 
 }
 
 /* Secciones generales */
@@ -263,3 +265,13 @@ h2 {
 @keyframes sparkleTrail { 0% { transform: scale(0) rotate(0deg); opacity: 0.8; } 50% { transform: scale(1) rotate(180deg); opacity: 1; } 100% { transform: scale(0) rotate(360deg); opacity: 0; } }
 @keyframes sparkleSuccess { 0% { transform: scale(0) rotate(0deg); opacity: 1; } 50% { transform: scale(1.2) rotate(180deg); opacity: 1; } 100% { transform: scale(0) rotate(360deg); opacity: 0; } }
 .puzzle-complete { animation: puzzleSuccess 1s ease; } 
+/* Imágenes que se ajustan al contenedor */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Opcional: evita espacios fantasma */
+  }
+  .foto-juancito {
+    max-width: 100%;
+    height: auto;
+  }
